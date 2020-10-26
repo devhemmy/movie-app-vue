@@ -2,7 +2,7 @@ const express = require("express");
 const router = require("./apiRoute");
 
 const app = express();
-const port = 5000;
+const PORT = process.env.PORT || 5000;
 
 // Add headers
 app.use(function (req, res, next) {
@@ -40,6 +40,6 @@ app.use(function (err, req, res, next) {
   res.status(500).send("Something broke!");
 });
 
-app.listen(port, () =>
-  console.log(`Example app listening at http://localhost:${port}`)
+app.listen(PORT, () =>
+  console.log(`Example app listening at http://localhost:${PORT}`)
 );
